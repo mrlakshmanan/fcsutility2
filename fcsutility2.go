@@ -166,7 +166,7 @@ func ErrorNP(db *sql.DB, programid string, program string, msg string) {
 	//sqlString := "insert into errortbl(errortime,programid,programName,errormsg) values(GETDATE(),'" + programid + "','" + program + "','" + msg + "')"
 	//_, inserterr := db.Exec(sqlString)
 	if inserterr != nil {
-		LogError(Panic, inserterr.Error())
+		LogError(NoPanic, inserterr.Error())
 	}
 }
 
